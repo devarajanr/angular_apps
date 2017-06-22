@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="test_app">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>Angular test app</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+   <div class="container">
+   	<div ng-controller="test_app_controller" ng-init="array_numbers=[1,2,5,6,7]">
+    	<label>{{name}}</label>
+        <span>{{array_numbers[0] * array_numbers[2]}}</span>
+        <ul class="list-group " ng-repeat="values in array_numbers">
+        	<li  class="list-group-item">{{ values  }}</li>
+        </ul>
+        
+        <table class="table table-bordered table-hover">
+        	<thead>
+            	<tr>
+                	<th>User Name</th>
+                    <th>Emp.ID</th>
+                    <th>Date of Birth</th>
+                    <th>Designation</th>
+                    <th>Date of Joining</th>                    
+                </tr>
+            </thead>
+            <tbody>
+            	<tr ng-repeat="users in table_data">
+                	<td>{{users.name}}</td>
+                    <td>{{users.id}}</td>
+                    <td>{{users.DOB}}</td>
+                    <td>{{users.Designation}}</td>
+                    <td>{{users.DOJ}}</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        
+
+    </div>
+  
+     	<phone-list></phone-list>
+    
+   </div>
+
+   
+    <script src="js/jquery.min.js"></script>   
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/angular.min_1.6.4.js"></script>
+    <script src="js/phoneapp.js"></script>
+    <script src="js/phoneapp_contrl.js"></script>
+<!--     <script src="js/phoneapp_test.js"></script>-->
+    <script type="text/javascript">
+
+		angular.module('test_app',[]).controller('test_app_controller',function($scope){
+			
+			$scope.name="Devarajan";
+			
+			var table_data = [
+			{"name":"User1","id":"00001","DOB":"15/06/1980","Designation":"Java Developer","DOJ":"20/05/2010"},
+			{"name":"User2","id":"00002","DOB":"15/06/1985","Designation":"Java Developer","DOJ":"20/05/2010"},
+			{"name":"User3","id":"00003","DOB":"15/06/1982","Designation":"Java Developer","DOJ":"20/05/2010"},
+			{"name":"User4","id":"00004","DOB":"15/06/1970","Designation":"Java Developer","DOJ":"20/05/2010"},
+			{"name":"User5","id":"00005","DOB":"10/06/1980","Designation":"Java Developer","DOJ":"20/05/2010"},
+			{"name":"User6","id":"00006","DOB":"15/06/1980","Designation":"Java Developer","DOJ":"20/05/2010"},
+			{"name":"User7","id":"00007","DOB":"15/06/1980","Designation":"Java Developer","DOJ":"20/05/2010"},
+			{"name":"User8","id":"00008","DOB":"15/06/1980","Designation":"Java Developer","DOJ":"20/05/2010"},
+			{"name":"User9","id":"00009","DOB":"15/06/1980","Designation":"Java Developer","DOJ":"20/05/2010"},
+			{"name":"User10","id":"00010","DOB":"15/06/1980","Designation":"Java Developer","DOJ":"20/05/2010"},
+			{"name":"User11","id":"00011","DOB":"15/06/1980","Designation":"Java Developer","DOJ":"20/05/2010"}
+			];
+		
+			$scope.table_data = table_data;
+		
+
+  		});
+		
+
+    </script>
+  </body>
+</html>
